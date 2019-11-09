@@ -1,0 +1,66 @@
+syntax on
+"colorscheme blackboard
+
+" pathogen set up stuff to allow installing vim packages
+"call pathogen#infect()
+"call pathogen#helptags()
+"
+"" syntastic plugin settings for linting in vim
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_config_file = '.clang_format'
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_cpp_compiler = 'clang++'
+"
+"" set the default clip buffer to use the system clipboard so you can yank and then use ctrl-v
+"" to paste in other applications. This requires your version of vim to support the option `+clipboard`
+"" check by calling `vim --version | grep clipboard`. On redhat, install the vim-X11 package, which provides 
+"" vimx, then set an alias to have `vim` point to the enhanced version i.e. put `alias vim=/usr/bin/vimx`
+"" in your .bashrc or whatever
+"set clipboard=unnamedplus
+"
+"" show line numbers by default
+"set number
+"
+"" Only do this part when compiled with support for autocommands.
+"" This adds custom formatting options for c/c++ files to use two spaces
+"" and use clang-format for auto formatting (called by issuing
+"" the filter command G=gg). clang-format options are specified in a .clang-format
+"" file in your project directory. You can generate a starting .clang-format
+"" by doing `clang-format -style=llvm -dump-config > .clang-format`, then 
+"" make your tweaks from there.
+"if has("autocmd")
+"    " Use filetype detection and file-based automatic indenting.
+"    filetype plugin indent on
+"    "
+"    " Use actual tab chars in Makefiles.
+"    autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+"    autocmd FileType c,cc,cpp set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+"    autocmd FileType c,cc,cpp setlocal equalprg=clang-format
+"endif
+
+" Default tab / spacing for other applications (ie for python and bash), 
+" use a tab width of 4 space chars.
+set tabstop=4       " The width of a TAB (\t) is set to 4
+set shiftwidth=4    " Indents will have a width of 4
+set softtabstop=4   " Set the number of columns for a tab
+set expandtab       " Expand tabs to spaces            
+set smarttab
+set hlsearch
+" Remaps copy to and paste to system clipboard
+set clipboard=unnamedplus
+"set clipboard=unnamed
+" vnoremap <C-c> "+yy
+
+"Some links for further reading:
+"https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+" 
+"https://github.com/vim-syntastic/syntastic
+"https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds
+"https://vim.fandom.com/wiki/Accessing_the_system_clipboard
