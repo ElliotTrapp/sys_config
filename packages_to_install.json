@@ -1,0 +1,12 @@
+{
+    "github" : [
+        "oh-my-zsh",
+        "zsh-syntax-highlighting",
+        "vim with clipboard",
+        "vlc",
+        "file utilities"
+    ],
+    "apt-get" : [
+        "lfc"
+    ]
+}

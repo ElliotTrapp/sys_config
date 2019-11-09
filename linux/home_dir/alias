@@ -34,7 +34,6 @@ alias build_run="build_dev; run_dev;"
 
 alias dom.nextgen="etrapp@webhosting-login1.jpl.nasa.gov:/home/domtb/domtb/"
 
-alias vim="/usr/local/bin/vim"
 alias vi="vim"
 #alias tmux="$scripts/tmux_setup.sh"
 alias take_note="$scripts/take_note.sh"
@@ -59,3 +58,4 @@ alias cpy="xclip -selection clipboard"
 alias pst="xclip -selection clipboard -o"
 alias space="df -h"
 
+alias printip="dig +short myip.opendns.com @resolver1.opendns.com"
