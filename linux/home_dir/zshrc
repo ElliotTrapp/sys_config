@@ -14,6 +14,8 @@ SAVEHIST=10000
 #HISTFILE=~/.cache/history
 HISTFILE=~/history
 
+set clipboard=unnamedplus
+
 ## History command configuration
 #setopt extended_history       # record timestamp of command in HISTFILE
 #setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
@@ -76,8 +78,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-set clipboard=unnamedplus
 
 # Set conda environement
 py3_env

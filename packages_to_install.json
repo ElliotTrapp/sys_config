@@ -3,10 +3,13 @@
         "oh-my-zsh",
         "zsh-syntax-highlighting",
         "vim with clipboard",
-        "vlc",
-        "file utilities"
+        "file utilities",
+        "vim one dark theme"
     ],
     "apt-get" : [
-        "lfc"
+        "pandoc",
+        "git",
+        "chromium-browser",
+        "vlc"
     ]
 }
