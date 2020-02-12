@@ -1,10 +1,17 @@
-alias vzsh="vim ~/.zshrc"
-alias vvsh="vim ~/.vimrc"
-alias vbsh="vim ~/.bashrc"
+alias vzsh="vim $zshrc"
+alias vvsh="vim $vimrc"
+alias vbsh="vim $bshrc"
+alias valias="vim $aliases"
+alias venv="vim $venv"
+alias vfuncs="vim $funcs"
 
-alias szsh="source ~/.zshrc"
-alias svsh="source ~/.vimrc"
-alias sbsh="source ~/.bashrc"
+alias szsh="source $zshrc"
+alias svsh="source $vimrc"
+alias sbsh="source $bshrc"
+alias salias="source $aliases"
+alias senv="source $venv"
+alias sfuncs="source $funcs"
+alias sall="source $zshrc && source $vimrc && source $aliases && source venv $$ source $funcs"
 
 # SSH
 alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"
@@ -22,6 +29,8 @@ alias git_all_rebase_orgin="cd $edl_setup_scripts/; git pull --rebase origin mas
 # SCP
 alias copy_from_dom_site="scp -r $webhosting_dom_site"
 alias copy_from_boltzmann="scp -r $boltzmann_tutorials_test"
+
+# VirtualEnv Envs
 
 # Conda Envs
 alias py3_env="conda activate py3"
@@ -42,16 +51,8 @@ alias dom.nextgen="etrapp@webhosting-login1.jpl.nasa.gov:/home/domtb/domtb/"
 
 alias vim="/usr/local/bin/vim"
 alias vi="vim"
-#alias tmux="$scripts/tmux_setup.sh"
-alias take_note="$scripts/take_note.sh"
 
-alias dom.note="take_note dom"
-alias viz.note="take_note viz"
-alias cave.note="take_note cave"
-alias dmt.note="take_note dmt"
-
-alias dom.todo="vi $dom/dom.todo"
-alias viz.todo="vi $viz/viz.todo"
-alias cave.todo="vi $cave/cave.todo"
-alias dmt.todo="vi $dmt/dmt.todo"
-
+alias dom.note="note dom"
+alias viz.note="note viz"
+alias cave.note="note cave"
+alias stor.note="note stor"

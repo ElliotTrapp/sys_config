@@ -1,9 +1,9 @@
 # Elliot's zsh config file
 
-# Load aliases, shortcuts, and envvariables
-[ -f "$HOME/.config/shortcut" ] && source "$HOME/.config/shortcut"
-[ -f "$HOME/.config/alias" ] && source "$HOME/.config/alias"
+# Load aliases, funcs, and envvariables
 [ -f "$HOME/.config/envvariables" ] && source "$HOME/.config/envvariables"
+[ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
+[ -f "$HOME/.config/funcs" ] && source "$HOME/.config/funcs"
 
 # Set zsh theme
 ZSH_THEME="robbyrussell"
@@ -32,21 +32,6 @@ source $ZSH/oh-my-zsh.sh
  else
    export EDITOR='vi'
  fi
-
-# Easily extract local ip address
-printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
 
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>

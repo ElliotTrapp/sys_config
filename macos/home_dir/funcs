@@ -1,0 +1,35 @@
+todo () {
+        project=$1
+        if [[ $# -lt 3 ]]
+        then
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} TODO $work/$project/notes/* -r
+                return 0
+        else
+                todo="${@:3}"
+                year=`date +'%Y'`
+                month=`date +'%m'`
+                day=`date +'%d'`
+                note_path=~/Work/$project/notes/$year/$month/$day.md
+                echo "# TODO: $todo" >> $note_path
+                return 0
+        fi
+}
+
+dom.todo () {
+        todo "dom" $@
+}
+
+# Easily extract local ip address
+printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'

@@ -1,5 +1,5 @@
 # Path
-export PATH=/usr/local/bin:/usr/bin:$HOME/bin:$HOME/anaconda3/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:$HOME/bin:$HOME/anaconda3/bin:/bin/:$PATH
 
 export TERM="xterm-256color"
 
@@ -22,18 +22,6 @@ export dom="$work/dom"
 
 # Viz locations
 export viz="$work/viz"
-# SpiceyFlow
-export spicey_flow="$viz/spicey_flow"
-export orbiters="$viz/orbiters"
-export verification="$orbiters/verification"
-export edl_setup_scripts="$viz/edl-setup-scripts/"
-export edl_config="$edl_setup_scripts/configurations/post_dsends_config.json"
-export flow="$edl_setup_scripts/development/dev/flow/flow"
-export flow_edl="$edl_setup_scripts/development/dev/flow.edl/flow/edl"
-export flow_spice="$edl_setup_scripts/development/dev/flow.spice"
-export edl="$edl_setup_scripts/development/dev/EDL"
-export ranger="$edl_setup_scripts/development/dev/ranger"
-export webapp="$edl_setup_scripts/development/dev/webapp"
 
 # Darts
 export darts="$work/darts"
@@ -42,6 +30,12 @@ export boltzmann_tutorials_test="boltzmann:/home/atbe/dev/users/etrapp/2_sandbox
 # Cave
 export cave="$work/cave"
 
-# DMT
-export dmt="$work/dmt"
+# STOR
+export stor="$work/stor"
 
+export config="~/.config"
+export funcs="$config/funcs"
+export envv="$config/envv"
+#export aliases="$config/aliases"
+export zshrc="$config/zshrc"
+export vimrc="$config/vimrc"
