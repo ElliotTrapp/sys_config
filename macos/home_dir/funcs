@@ -1,7 +1,10 @@
+#---------------------------------------------------------------------------------------------------------
+#                                   TODO
+#---------------------------------------------------------------------------------------------------------
 todo () {
         if [[ $# -lt 1 ]]
         then
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} TODO ~/notes* -r
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO" ~/notes* -r
                 return 0
         else
                 todo="${@:1}"
@@ -9,7 +12,7 @@ todo () {
                 month=`date +'%m'`
                 day=`date +'%d'`
                 note_path=~/notes/$year/$month/$day.md
-                echo "#TODO: $todo" >> $note_path
+                echo "#TODO[ ]: $todo" >> $note_path
                 return 0
         fi
 }
@@ -19,7 +22,7 @@ project.todo () {
         project_path=$work/$project/notes/
         if [[ $# -lt 2 ]]
         then
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} TODO $project_path* -r
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO" $project_path* -r
                 return 0
         else
                 todo="${@:2}"
@@ -27,7 +30,7 @@ project.todo () {
                 month=`date +'%m'`
                 day=`date +'%d'`
                 note_path=~/Work/$project/notes/$year/$month/$day.md
-                echo "#TODO: $todo" >> $note_path
+                echo "#TODO[ ]: $todo" >> $note_path
                 return 0
         fi
 }
@@ -36,6 +39,50 @@ project.todo () {
 dom.todo () {
     project.todo "dom" $@
 }
+
+stor.todo () {
+    project.todo "stor" $@
+}
+
+ship.todo () {
+    project.todo "ship" $@
+}
+
+viz.todo () {
+    project.todo "viz" $@
+}
+
+#---------------------------------------------------------------------------------------------------------
+#                                   DONE 
+#---------------------------------------------------------------------------------------------------------
+
+#complete() {
+#    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "TODO[X]" ~/notes* -r
+#    return 0
+#}
+#
+#project.complete () {
+#    project=$1
+#    project_path=$work/$project/notes/
+#    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "TODO[X]" $project_path* -r
+#    return 0
+#}
+#
+#dom.complete () {
+#    project.complete "dom" $@
+#}
+#
+#stor.complete () {
+#    project.complete "stor" $@
+#}
+#
+#ship.complete () {
+#    project.complete "ship" $@
+#}
+#
+#viz.complete () {
+#    project.complete "viz" $@
+#}
 
 # Easily extract local ip address
 printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }
