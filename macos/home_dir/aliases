@@ -1,17 +1,16 @@
 alias vzsh="vim $zshrc"
 alias vvsh="vim $vimrc"
 alias vbsh="vim $bshrc"
-alias valias="vim $aliases"
-alias venv="vim $venv"
+alias valiases="vim $aliases"
+alias vevars="vim $evars"
 alias vfuncs="vim $funcs"
 
 alias szsh="source $zshrc"
-alias svsh="source $vimrc"
 alias sbsh="source $bshrc"
-alias salias="source $aliases"
-alias senv="source $venv"
+alias saliases="source $aliases"
+alias sevars="source $evars"
 alias sfuncs="source $funcs"
-alias sall="source $zshrc && source $vimrc && source $aliases && source venv $$ source $funcs"
+alias sall="szsh && saliases && sevars && sfuncs"
 
 # SSH
 alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"

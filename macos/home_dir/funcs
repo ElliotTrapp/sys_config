@@ -4,7 +4,7 @@
 todo () {
         if [[ $# -lt 1 ]]
         then
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO" ~/notes* -r
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" ~/notes* -r
                 return 0
         else
                 todo="${@:1}"
@@ -22,7 +22,7 @@ project.todo () {
         project_path=$work/$project/notes/
         if [[ $# -lt 2 ]]
         then
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO" $project_path* -r
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $project_path* -r
                 return 0
         else
                 todo="${@:2}"
