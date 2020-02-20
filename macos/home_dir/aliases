@@ -1,16 +1,16 @@
 alias vzsh="vim $zshrc"
 alias vvsh="vim $vimrc"
 alias vbsh="vim $bshrc"
-alias valiases="vim $aliases"
+alias valias="vim $alias"
 alias vevars="vim $evars"
 alias vfuncs="vim $funcs"
 
 alias szsh="source $zshrc"
 alias sbsh="source $bshrc"
-alias saliases="source $aliases"
+alias salias="source $alias"
 alias sevars="source $evars"
 alias sfuncs="source $funcs"
-alias sall="szsh && saliases && sevars && sfuncs"
+alias sall="szsh && salias && sevars && sfuncs"
 
 # SSH
 alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"
@@ -30,10 +30,12 @@ alias copy_from_dom_site="scp -r $webhosting_dom_site"
 alias copy_from_boltzmann="scp -r $boltzmann_tutorials_test"
 
 # VirtualEnv Envs
+alias py3_base="source ~/.config/envs/py3_base/bin/activate"
+alias dom_tests_env="source /Users/etrapp/Work/dom/development/tests/dom_tests/dom_tests_env/bin/activate"
 
 # Conda Envs
-alias py3_env="conda activate py3"
-alias spice_env="conda activate spice"
+#alias py3_env="conda activate py3"
+#alias spice_env="conda activate spice"
 
 # Utilities
 alias save_dir="$utilities/save_dir.sh"
@@ -56,3 +58,4 @@ alias viz.note="note viz"
 alias cave.note="note cave"
 alias stor.note="note stor"
 alias ship.note="note ship"
+

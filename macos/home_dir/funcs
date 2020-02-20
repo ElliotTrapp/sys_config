@@ -52,37 +52,51 @@ viz.todo () {
     project.todo "viz" $@
 }
 
+#--------------------------------------------------------------------------------------------------------
+#                                   MARK_DONE
+#--------------------------------------------------------------------------------------------------------
+mark_done() {
+    HORIZONTALLLINE="-------------------------------------------------------------------------------------------------"
+    # List todo's with a number to select
+    todo
+    echo $HORIZONTALLINE
+    echo "Which task is done?"
+    read -r done_task
+    #TODO: Print out numbers of task to select from
+}
+
+
 #---------------------------------------------------------------------------------------------------------
-#                                   DONE 
+#                                   LIST_DONE 
 #---------------------------------------------------------------------------------------------------------
 
-#complete() {
-#    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "TODO[X]" ~/notes* -r
-#    return 0
-#}
-#
-#project.complete () {
-#    project=$1
-#    project_path=$work/$project/notes/
-#    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "TODO[X]" $project_path* -r
-#    return 0
-#}
-#
-#dom.complete () {
-#    project.complete "dom" $@
-#}
-#
-#stor.complete () {
-#    project.complete "stor" $@
-#}
-#
-#ship.complete () {
-#    project.complete "ship" $@
-#}
-#
-#viz.complete () {
-#    project.complete "viz" $@
-#}
+list_done() {
+    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" ~/notes* -r
+    return 0
+}
+
+project.list_done () {
+    project=$1
+    project_path=$work/$project/notes/
+    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" $project_path* -r
+    return 0
+}
+
+dom.list_done () {
+    project.list_done "dom" $@
+}
+
+stor.list_done () {
+    project.list_done "stor" $@
+}
+
+ship.list_done () {
+    project.list_done "ship" $@
+}
+
+viz.list_done () {
+    project.list_done "viz" $@
+}
 
 # Easily extract local ip address
 printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }

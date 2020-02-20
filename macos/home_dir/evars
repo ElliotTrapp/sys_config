@@ -1,6 +1,9 @@
 # Path
 export PATH=/usr/local/bin:/usr/bin:$HOME/bin:$HOME/anaconda3/bin:/bin/:$PATH
 
+# PYTHONPATH
+export PYTHONPATH=/Users/etrapp/Work/dom/development/tests/dom_tests:/usr/local/bin/:$PYTHONPATH
+
 export TERM="xterm-256color"
 
 #Path to your oh - my - zsh installation.
@@ -19,6 +22,7 @@ export scripts="/Users/etrapp/Scripts"
 
 # Dom locations
 export dom="$work/dom"
+export dom_tests="$dom/development/tests/dom_tests/"
 
 # Viz locations
 export viz="$work/viz"
@@ -36,6 +40,6 @@ export stor="$work/stor"
 export config="~/.config"
 export funcs="$config/funcs"
 export evars="$config/evars"
-#export aliases="$config/aliases"
+export alias="$config/aliases"
 export zshrc="$config/zshrc"
 export vimrc="$config/vimrc"
