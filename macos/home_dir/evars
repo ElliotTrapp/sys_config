@@ -24,10 +24,10 @@ export vimrc="$config/vimrc"
 export cronjobs="$config/cronjobs/"
 export sys_config="~/sys_config"
 
-export file_util="~/file_utilities"
-export work="~/work"
-export school="~/school"
-export $notes="~/notes"
+export file_util="~/FileUtilities"
+export work="~/Work"
+export school="~/School"
+export $notes="~/Notes"
 export saves="$work/saves"
 
 # Projects
