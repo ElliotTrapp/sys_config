@@ -44,6 +44,11 @@ alias save_remote_dir="/Users/etrapp/Utilities/save_remote_dir.sh"
 alias pst="pbpaste"
 alias cpy="pbcopy"
 
+for project in ${projects[@]}; do
+    declare $project="$work/$project"
+    export $project
+done
+
 alias run_dev="cd $edl_setup_scripts/development/; ./run_dev;"
 alias build_dev="cd $edl_setup_scripts/development/; ./build_dev;"
 alias build_run="build_dev; run_dev;"
