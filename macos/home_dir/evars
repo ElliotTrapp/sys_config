@@ -37,9 +37,10 @@ export cave="$work/cave"
 # STOR
 export stor="$work/stor"
 
-export config="~/.config"
+export config="/Users/etrapp/.config"
 export funcs="$config/funcs"
 export evars="$config/evars"
 export alias="$config/aliases"
 export zshrc="$config/zshrc"
 export vimrc="$config/vimrc"
+export cronjobs="$config/cronjobs/"
