@@ -14,9 +14,13 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 # PIP
 export PIP_REQUIRE_VIRTUALENV=false
 
+export utilities="/Users/etrapp/Utilities"
+export work="/Users/etrapp/Work"
+export saves="$work/saves"
+export scripts="/Users/etrapp/Scripts"
+
 # Projects
-#export PROJECTS=test:dom:viz:stor:cave:ship
-projects=("test" "dom" "viz")
+projects=("test" "dom" "viz" "darts" "cave")
 
 for project in ${projects[@]}; do
     #ttt=$project
@@ -24,17 +28,7 @@ for project in ${projects[@]}; do
     export $project
 done
 
-#( IFS=:
-#    for project in $PROJECTS; do
-##        export ttt="$work/$project"
-#        ttt=$(("$project"))
-#    done
-#)
 
-export utilities="/Users/etrapp/Utilities"
-export work="/Users/etrapp/Work"
-export saves="$work/saves"
-export scripts="/Users/etrapp/Scripts"
 
 # Dom locations
 
