@@ -40,7 +40,7 @@ for project in ${projects[@]}; do
     declare $project="$work/$project"
     export $project
 
-    declare $project="$work/$project"
+    declare $project_notes="$work/$project"
     export $project
 done
 
