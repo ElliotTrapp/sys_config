@@ -31,7 +31,7 @@ export $notes="~/Notes"
 export saves="$work/saves"
 
 # Projects
-projects=("test" "dom" "viz" "darts" "cave")
+projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
 
 for project in ${projects[@]}; do
     #ttt=$project
