@@ -25,10 +25,10 @@ export cronjobs="$config/cronjobs/"
 export sys_config="~/sys_config"
 
 export file_util="~/FileUtilities"
+export backups="~/Backups"
 export work="~/Work"
 export school="~/School"
-export $notes="~/Notes"
-export saves="$work/saves"
+export notes="~/Notes"
 
 # Projects
 projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
