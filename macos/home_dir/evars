@@ -14,6 +14,16 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 # PIP
 export PIP_REQUIRE_VIRTUALENV=false
 
+# Config
+export config="/Users/etrapp/.config"
+export funcs="$config/funcs"
+export evars="$config/evars"
+export alias="$config/aliases"
+export zshrc="$config/zshrc"
+export vimrc="$config/vimrc"
+export cronjobs="$config/cronjobs/"
+export sys_config="~/sys_config"
+
 export file_util="~/FileUtilities"
 export work="~/Work"
 export school="~/School"
@@ -49,10 +59,3 @@ export cave="$work/cave"
 # STOR
 export stor="$work/stor"
 
-export config="/Users/etrapp/.config"
-export funcs="$config/funcs"
-export evars="$config/evars"
-export alias="$config/aliases"
-export zshrc="$config/zshrc"
-export vimrc="$config/vimrc"
-export cronjobs="$config/cronjobs/"
