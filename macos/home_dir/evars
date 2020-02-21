@@ -14,10 +14,10 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 # PIP
 export PIP_REQUIRE_VIRTUALENV=false
 
-export utilities="/Users/etrapp/Utilities"
+export file_util="/Users/etrapp/FileUtilities"
 export work="/Users/etrapp/Work"
 export saves="$work/saves"
-export scripts="/Users/etrapp/Scripts"
+export school="/Users/etrapp/School"
 
 # Projects
 projects=("test" "dom" "viz" "darts" "cave")
