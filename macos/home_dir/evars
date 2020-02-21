@@ -1,9 +1,8 @@
-# Path
+# Paths
 export PATH=/usr/local/bin:/usr/bin:$HOME/bin:$HOME/anaconda3/bin:/bin/:$PATH
-
-# PYTHONPATH
 export PYTHONPATH=/Users/etrapp/Work/dom/development/tests/dom_tests:/usr/local/bin/:$PYTHONPATH
 
+# Terminal
 export TERM="xterm-256color"
 
 #Path to your oh - my - zsh installation.
