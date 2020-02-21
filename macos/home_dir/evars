@@ -65,4 +65,4 @@ export test_cat_update="$test_suites/test_cat_update/"
 export test_cat_replace="$test_suites/test_cat_replace"
 export test_cat_publish="$test_suites/test_cat_publish"
 
-export stor_srs="$stor`
+export stor_srs="$stor/
