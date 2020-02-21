@@ -57,17 +57,6 @@ export build_dom_cmd="$refactored_tests/build_dom_cmd.py"
 export test_suites="$refactored_tests/test_suites/"
 export test_cat_delete="$test_suites/test_cat_delete/"
 export test_cat_get_file="$test_suites/test_cat_get_file/"
-
-# Viz locations
-export viz="$work/viz"
-
-# Darts
-export darts="$work/darts"
-export boltzmann_tutorials_test="boltzmann:/home/atbe/dev/users/etrapp/2_sandbox/src/TutorialNotebooks/python/test/"
-
-# Cave
-export cave="$work/cave"
-
-# STOR
-export stor="$work/stor"
-
+export test_cat_update="$test_suites/test_cat_update/"
+export test_cat_replace="$test_suites/test_cat_replace"
+export test_cat_publish="$test_suites/test_cat_publish"
