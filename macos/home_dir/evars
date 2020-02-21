@@ -54,6 +54,9 @@ export static_test_files="$dom/static_test_files/"
 export test_base="$refactored_tests/test_base.py"
 export dom_cli="$refactored_tests/dom_cli.py"
 export build_dom_cmd="$refactored_tests/build_dom_cmd.py"
+export test_suites="$refactored_tests/test_suites/"
+export test_cat_delete="$test_suites/test_cat_delete/"
+export test_cat_get_file="$test_suites/test_cat_get_file/"
 
 # Viz locations
 export viz="$work/viz"
