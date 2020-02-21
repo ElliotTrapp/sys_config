@@ -37,7 +37,9 @@ export save_file="$file_utils/save_file.sh"
 projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
 
 for project in ${projects[@]}; do
-    #ttt=$project
+    declare $project="$work/$project"
+    export $project
+
     declare $project="$work/$project"
     export $project
 done
