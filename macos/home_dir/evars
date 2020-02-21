@@ -35,13 +35,13 @@ export save_file="$file_utils/save_file.sh"
 
 # Projects
 projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
+export $projects
 
 for project in ${projects[@]}; do
     declare $project="$work/$project"
-    declare $project_notes="$work/$project/notes/"
-
+#    declare $project_notes="$work/$project/notes/"
     export $project
-    export $project_notes
+#    export $project_notes
 done
 
 # Project specific locations
