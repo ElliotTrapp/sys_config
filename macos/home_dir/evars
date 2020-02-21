@@ -44,11 +44,7 @@ for project in ${projects[@]}; do
     export $project_notes
 done
 
-
-
-# Dom locations
-
-export dom="$work/dom"
+# Project specific locations
 export dom_tests="$dom/development/tests/dom_tests/"
 
 # Viz locations
