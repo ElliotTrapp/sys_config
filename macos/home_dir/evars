@@ -15,7 +15,7 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 export PIP_REQUIRE_VIRTUALENV=false
 
 # Projects
-export PROJECTS=test:dom:viz:stor:cave:ship
+export PROJECTS=test\:dom\:viz\:stor\:cave\:ship\:$PROJECTS
 
 for project in ${PROJECTS//:/ }; do
 #    export $project="$work/$project"
