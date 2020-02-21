@@ -15,6 +15,7 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 export PIP_REQUIRE_VIRTUALENV=false
 
 # Projects
+export PROJECTS=dom:viz:stor:cave:ship
 
 
 export utilities="/Users/etrapp/Utilities"
