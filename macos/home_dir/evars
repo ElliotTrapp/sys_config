@@ -51,6 +51,9 @@ export legacy_tests="$dom/legacy_tests/"
 export complete_tests="$dom/complete_tests/"
 export make_tests="$dom/make_tests/"
 export static_test_files="$dom/static_test_files/"
+export test_base="$refactored_tests/test_base.py"
+export dom_cli="$refactored_tests/dom_cli.py"
+export build_dom_cmd="$refactored_tests/build_dom_cmd.py"
 
 # Viz locations
 export viz="$work/viz"
