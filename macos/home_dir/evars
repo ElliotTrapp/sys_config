@@ -45,6 +45,9 @@ for project in ${projects[@]}; do
 done
 
 # Project specific locations
+export m20_cpy="$dom/m20_cpy"
+export dom_reports="$dom/reports"
+# dom_tests
 export dom_tests="$dom/development/tests/dom_tests/"
 export refactored_tests="$dom/refactored_tests/"
 export legacy_tests="$dom/legacy_tests/"
@@ -60,3 +63,5 @@ export test_cat_get_file="$test_suites/test_cat_get_file/"
 export test_cat_update="$test_suites/test_cat_update/"
 export test_cat_replace="$test_suites/test_cat_replace"
 export test_cat_publish="$test_suites/test_cat_publish"
+
+export stor_srs="$stor`
