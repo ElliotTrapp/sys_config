@@ -18,7 +18,7 @@ export PIP_REQUIRE_VIRTUALENV=false
 export PROJECTS=test:dom:viz:stor:cave:ship
 
 for project in ${PROJECTS//:/ }; do
-    export $project="$work/$project"
+    export "$project"="$work/$project"
 done
 
 export utilities="/Users/etrapp/Utilities"
