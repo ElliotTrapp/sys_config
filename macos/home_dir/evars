@@ -16,11 +16,12 @@ export PIP_REQUIRE_VIRTUALENV=false
 
 # Projects
 #export PROJECTS=test:dom:viz:stor:cave:ship
-projects=("test", "dom", "viz")
+projects=("test" "dom" "viz")
 
 for project in ${projects[@]}; do
     #ttt=$project
-    export ="$work/$project"
+    declare $project="$work/$project"
+    export $project
 done
 
 #( IFS=:
