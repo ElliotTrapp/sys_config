@@ -1,3 +1,5 @@
+# Delcare configs
+
 alias vzsh="vim $zshrc"
 alias vvsh="vim $vimrc"
 alias vbsh="vim $bshrc"
