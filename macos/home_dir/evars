@@ -46,6 +46,11 @@ done
 
 # Project specific locations
 export dom_tests="$dom/development/tests/dom_tests/"
+export refactored_tests="$dom/refactored_tests/"
+export legacy_tests="$dom/legacy_tests/"
+export complete_tests="$dom/complete_tests/"
+export make_tests="$dom/make_tests/"
+export static_test_files="$dom/static_test_files/"
 
 # Viz locations
 export viz="$work/viz"
