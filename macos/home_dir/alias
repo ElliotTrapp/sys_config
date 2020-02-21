@@ -39,6 +39,12 @@ alias dom_tests_env="source /Users/etrapp/Work/dom/development/tests/dom_tests/d
 #alias py3_env="conda activate py3"
 #alias spice_env="conda activate spice"
 
+# Projects
+
+for project in ${projects[@]}; do
+    alias ${project}.note="note $project"
+done
+
 # Utilities
 alias save_dir="$utilities/save_dir.sh"
 alias write_new_version="$utilities/write_new_version.sh"
@@ -46,10 +52,6 @@ alias save_remote_dir="/Users/etrapp/Utilities/save_remote_dir.sh"
 alias pst="pbpaste"
 alias cpy="pbcopy"
 
-#for project in ${projects[@]}; do
-#    declare $project="$work/$project"
-#    export $project
-#done
 
 alias run_dev="cd $edl_setup_scripts/development/; ./run_dev;"
 alias build_dev="cd $edl_setup_scripts/development/; ./build_dev;"
@@ -60,9 +62,4 @@ alias dom.nextgen="etrapp@webhosting-login1.jpl.nasa.gov:/home/domtb/domtb/"
 alias vim="/usr/local/bin/vim"
 alias vi="vim"
 
-alias dom.note="note dom"
-alias viz.note="note viz"
-alias cave.note="note cave"
-alias stor.note="note stor"
-alias ship.note="note ship"
 

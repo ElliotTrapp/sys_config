@@ -1,8 +1,8 @@
 # Elliot's zsh config file
 
-# Load aliases, funcs, and envvariables
+# Load alias, funcs, and envvariables
 [ -f "$HOME/.config/evars" ] && source "$HOME/.config/evars"
-[ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
+[ -f "$HOME/.config/alias" ] && source "$HOME/.config/alias"
 [ -f "$HOME/.config/funcs" ] && source "$HOME/.config/funcs"
 
 # Set zsh theme

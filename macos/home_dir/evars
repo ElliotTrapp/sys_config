@@ -14,21 +14,22 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 # PIP
 export PIP_REQUIRE_VIRTUALENV=false
 
-# Config
-export config="/Users/etrapp/.config"
-export funcs="$config/funcs"
-export evars="$config/evars"
-export alias="$config/aliases"
-export zshrc="$config/zshrc"
-export vimrc="$config/vimrc"
-export cronjobs="$config/cronjobs/"
 export sys_config="$HOME/sys_config"
-
 export file_utils="$HOME/FileUtilities"
 export backups="$HOME/Backups"
 export work="$HOME/Work"
 export school="$HOME/School"
 export notes="$HOME/Notes"
+
+# Config
+export config="/Users/etrapp/.config"
+configs=("funcs" "evars" "alias" "zshrc" "vimrc" "cronjobs")
+export $configs
+
+for config_file in ${configs[@]}; do
+    declare $config_file="$config/$config_file"
+    export $config_file
+done
 
 # Utils
 export save_file="$file_utils/save_file.sh"
@@ -45,9 +46,9 @@ for project in ${projects[@]}; do
 done
 
 # Project specific locations
-export m20_cpy="$dom/m20_cpy/"
-export dom_reports="$dom/reports/"
-export dom_ops_tools="$dom/dom-ops-tools"
+export m20_cpy="$dom/ops/m20_cpy/"
+export dom_reports="$dom/ops/reports/"
+export dom_ops_tools="$dom/ops/dom-ops-tools"
 # dom_tests
 export dom_tests="$dom/development/tests/dom_tests/"
 export refactored_tests="$dom/refactored_tests/"
