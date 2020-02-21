@@ -20,7 +20,7 @@ export PROJECTS=test:dom:viz:stor:cave:ship
 ( IFS=:
     for project in $PROJECTS; do
 #        export ttt="$work/$project"
-         ttt=$(($project))
+        ttt=$(("$project"))
     done
 )
 
