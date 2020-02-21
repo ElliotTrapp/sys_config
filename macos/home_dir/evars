@@ -30,6 +30,9 @@ export work="~/Work"
 export school="~/School"
 export notes="~/Notes"
 
+# Utils
+export save_file="$file_utils/save_file.sh"
+
 # Projects
 projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
 
