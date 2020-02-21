@@ -45,8 +45,9 @@ for project in ${projects[@]}; do
 done
 
 # Project specific locations
-export m20_cpy="$dom/m20_cpy"
-export dom_reports="$dom/reports"
+export m20_cpy="$dom/m20_cpy/"
+export dom_reports="$dom/reports/"
+export dom_ops_tools="$dom/dom-ops-tools"
 # dom_tests
 export dom_tests="$dom/development/tests/dom_tests/"
 export refactored_tests="$dom/refactored_tests/"
