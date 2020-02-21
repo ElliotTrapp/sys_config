@@ -24,7 +24,7 @@ export vimrc="$config/vimrc"
 export cronjobs="$config/cronjobs/"
 export sys_config="~/sys_config"
 
-export file_util="~/FileUtilities"
+export file_utils="~/FileUtilities"
 export backups="~/Backups"
 export work="~/Work"
 export school="~/School"
