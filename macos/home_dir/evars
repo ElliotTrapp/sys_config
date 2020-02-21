@@ -14,6 +14,9 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 # PIP
 export PIP_REQUIRE_VIRTUALENV=false
 
+# Projects
+
+
 export utilities="/Users/etrapp/Utilities"
 export work="/Users/etrapp/Work"
 export saves="$work/saves"
