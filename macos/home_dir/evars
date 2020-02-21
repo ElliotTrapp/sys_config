@@ -24,11 +24,11 @@ export vimrc="$config/vimrc"
 export cronjobs="$config/cronjobs/"
 export sys_config="$HOME/sys_config"
 
-export file_utils="~/FileUtilities"
-export backups="~/Backups"
-export work="~/Work"
-export school="~/School"
-export notes="~/Notes"
+export file_utils="$HOME/FileUtilities"
+export backups="$HOME/Backups"
+export work="$HOME/Work"
+export school="$HOME/School"
+export notes="$HOME/Notes"
 
 # Utils
 export save_file="$file_utils/save_file.sh"
