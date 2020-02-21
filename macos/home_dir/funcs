@@ -9,6 +9,8 @@ todo () {
                 echo $HORIZONTALLINE
                 x=1
                 grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $notes/* -r -h | while read -r line; do
+                    task=$(basename "$line")
+                    tasks[$x]=$task
                     echo "$x $line"
                     x=$(( $x + 1 ))
                 done
@@ -33,6 +35,8 @@ project.todo () {
                 echo $HORIZONTALLINE
                 x=1
                 grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $project_path/* -r -h | while read -r line; do
+                    task=$(basename "$line")
+                    tasks[$x]=$task
                     echo "$x $line"
                     x=$(( $x + 1 ))
                 done
@@ -66,14 +70,30 @@ viz.todo () {
     project.todo "viz" $@
 }
 
+update_todo() {
+    string=$1 
+    done_string="[X]"
+    echo "${string/\[ \]/$done_string}"
+}
+escape_todo() {
+    string=$1 
+    escaped_string="\[ \]"
+    echo "${string/\[ \]/$escaped_string}"
+}
+
 #--------------------------------------------------------------------------------------------------------
 #                                   MARK_DONE
 #--------------------------------------------------------------------------------------------------------
 mark_done() {
     # List todo's with a number to select
     todo
+    echo "Which task is complete?"
     read -r tasknum
-    line=$devices[$tasknum]
+    done_task=$tasks[$tasknum]
+    marked_done_task=$(update_todo "$done_task")
+    escaped_task=$(escape_todo "$done_task")
+    find /Users/etrapp/Notes/test -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
+    return 0
     # Mark the item as complete
 }
 
@@ -83,7 +103,7 @@ mark_done() {
 #---------------------------------------------------------------------------------------------------------
 
 list_done() {
-    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" ~/notes* -r
+    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" $notes/* -r
     return 0
 }
 
