@@ -22,7 +22,7 @@ export alias="$config/aliases"
 export zshrc="$config/zshrc"
 export vimrc="$config/vimrc"
 export cronjobs="$config/cronjobs/"
-export sys_config="~/sys_config"
+export sys_config="$HOME/sys_config"
 
 export file_utils="~/FileUtilities"
 export backups="~/Backups"
