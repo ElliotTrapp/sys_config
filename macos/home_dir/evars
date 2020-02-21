@@ -17,10 +17,11 @@ export PIP_REQUIRE_VIRTUALENV=false
 # Projects
 export PROJECTS=test:dom:viz:stor:cave:ship:$PROJECTS
 
-for project in ${PROJECTS/:/ }; do
-#    export $project="$work/$project"
-    export $project="echo $project"
-done
+( IFS=:
+    for project in $PROJECTS; do
+        export ttt="echo $project"
+    done
+)
 
 export utilities="/Users/etrapp/Utilities"
 export work="/Users/etrapp/Work"
