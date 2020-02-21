@@ -15,7 +15,8 @@ export ZSH_HIGHLIGHT_MAXLENGTH=60
 export PIP_REQUIRE_VIRTUALENV=false
 
 # Projects
-export PROJECTS=test:dom:viz:stor:cave:ship
+#export PROJECTS=test:dom:viz:stor:cave:ship
+projects=("test", "dom", "viz")
 
 ( IFS=:
     for project in $PROJECTS; do
