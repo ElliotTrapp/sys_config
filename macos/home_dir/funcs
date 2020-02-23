@@ -15,39 +15,19 @@ escape_todo() {
 #---------------------------------------------------------------------------------------------------------
 #                                   TODO
 #---------------------------------------------------------------------------------------------------------
-todo () {
-        # List todo's with a number to select
-        if [[ $# -lt 1 ]]
-        then
-                echo $HORIZONTALLINE
-                x=1
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $notes/* -r -h | while read -r line; do
-                    task=$(basename "$line")
-                    tasks[$x]=$task
-                    echo "$x $line"
-                    x=$(( $x + 1 ))
-                done
-                echo $HORIZONTALLINE
-                return 0
-        else
-                todo="${@:1}"
-                year=`date +'%Y'`
-                month=`date +'%m'`
-                day=`date +'%d'`
-                note_path=$notes/$year/$month/$day.md
-                echo "#TODO[ ]: $todo" >> $note_path
-                return 0
-        fi
-}
-
-project.todo () {
+base.todo () {
         project=$1
-        project_path=$work/$project/notes/
-        if [[ $# -lt 2 ]]
+        if [[ $project == "base" ]];
+        then
+            notes_path=$notes/
+        else
+            notes_path=$work/$project/notes/
+        fi
+        if [[ $# -lt 2 ]];
         then
                 echo $HORIZONTALLINE
                 x=1
-                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $project_path/* -r -h | while read -r line; do
+                grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[ \]" $notes_path/* -r -h | while read -r line; do
                     task=$(basename "$line")
                     tasks[$x]=$task
                     echo "$x $line"
@@ -60,75 +40,67 @@ project.todo () {
                 year=`date +'%Y'`
                 month=`date +'%m'`
                 day=`date +'%d'`
-                note_path=~/Work/$project/notes/$year/$month/$day.md
+                note_path=$notes_path/$year/$month/$day.md
                 echo "#TODO[ ]: $todo" >> $note_path
                 return 0
         fi
 }
 
+todo () {
+    base.todo "base" $@
+}
 
 dom.todo () {
-    project.todo "dom" $@
+    base.todo "dom" $@
 }
 
 stor.todo () {
-    project.todo "stor" $@
+    base.todo "stor" $@
 }
 
 ship.todo () {
-    project.todo "ship" $@
+    base.todo "ship" $@
 }
 
 viz.todo () {
-    project.todo "viz" $@
+    base.todo "viz" $@
 }
-
 
 #--------------------------------------------------------------------------------------------------------
 #                                   MARK_DONE
 #--------------------------------------------------------------------------------------------------------
-mark_done() {
+base.mark_done() {
     # List todo's with a number to select
-    todo
-    echo "Which task is complete?"
+    base.todo $@
+    echo "Which task(s) are complete?"
     read -r tasknum
     done_task=$tasks[$tasknum]
     marked_done_task=$(update_todo "$done_task")
     escaped_task=$(escape_todo "$done_task")
-    LC_ALL=C find $notes -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
-    return 0
     # Mark the item as complete
+    LC_ALL=C find $notes_path -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
+    return 0
 }
 
-project.mark_done() {
-    # List todo's with a number to select
-    project.todo $@
-    echo "Which task is complete?"
-    read -r tasknum
-    done_task=$tasks[$tasknum]
-    marked_done_task=$(update_todo "$done_task")
-    escaped_task=$(escape_todo "$done_task")
-    LC_ALL=C find $project_path -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
-    return 0
-    # Mark the item as complete
+mark_done () {
+    base.mark_done "base" $@
 }
 
 dom.mark_done () {
-    project.mark_done "dom" $@
+    base.mark_done "dom" $@
 }
 
 stor.mark_done () {
-    project.mark_done "stor" $@
+    base.mark_done "stor" $@
 }
 
 ship.mark_done () {
-    project.mark_done "ship" $@
+    base.mark_done "ship" $@
 }
 
 viz.mark_done () {
-    project.mark_done "viz" $@
+    base.mark_done "viz" $@
 }
-
 
 #---------------------------------------------------------------------------------------------------------
 #                                   LIST_DONE 
@@ -139,27 +111,36 @@ list_done() {
     return 0
 }
 
-project.list_done () {
+base.list_done () {
     project=$1
-    project_path=$work/$project/notes/
-    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" $project_path* -r -h
+    if [[ $project == "base" ]];
+    then
+        notes_path=$notes/
+    else
+        notes_path=$work/$project/notes/
+    fi
+    grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "#TODO\[X\]" $notes_path* -r -h
     return 0
 }
 
+list_done() {
+    base.list_done "base" $@
+}
+
 dom.list_done () {
-    project.list_done "dom" $@
+    base.list_done "dom" $@
 }
 
 stor.list_done () {
-    project.list_done "stor" $@
+    base.list_done "stor" $@
 }
 
 ship.list_done () {
-    project.list_done "ship" $@
+    base.list_done "ship" $@
 }
 
 viz.list_done () {
-    project.list_done "viz" $@
+    base.list_done "viz" $@
 }
 
 # Easily extract local ip address
