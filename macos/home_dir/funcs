@@ -47,23 +47,23 @@ base.todo () {
 }
 
 todo () {
-    base.todo "base" $@
+    base.todo "base" "$@"
 }
 
 dom.todo () {
-    base.todo "dom" $@
+    base.todo "dom" "$@"
 }
 
 stor.todo () {
-    base.todo "stor" $@
+    base.todo "stor" "$@"
 }
 
 ship.todo () {
-    base.todo "ship" $@
+    base.todo "ship" "$@"
 }
 
 viz.todo () {
-    base.todo "viz" $@
+    base.todo "viz" "$@"
 }
 
 #--------------------------------------------------------------------------------------------------------
@@ -71,35 +71,47 @@ viz.todo () {
 #--------------------------------------------------------------------------------------------------------
 base.mark_done() {
     # List todo's with a number to select
-    base.todo $@
-    echo "Which task(s) are complete?"
-    read -r tasknum
-    done_task=$tasks[$tasknum]
-    marked_done_task=$(update_todo "$done_task")
-    escaped_task=$(escape_todo "$done_task")
-    # Mark the item as complete
-    LC_ALL=C find $notes_path -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
+    base.todo $1
+    # Already passed the numbers of what is done, just make them complete
+    if [[ $# -gt 1 ]];
+    then
+        tasknums=${@:2}
+    else
+        echo "Which task(s) are complete?"
+        read -r tasknum
+    fi
+#        read -r tasknums
+#    fi
+#    for tasknum in ${tasknums[@]};
+#    do
+#        echo $tasknum
+        done_task=$tasks[$tasknum]
+        marked_done_task=$(update_todo "$done_task")
+        escaped_task=$(escape_todo "$done_task")
+        # Mark the item as complete
+        LC_ALL=C find $notes_path -type f -exec sed -i "" "s/$escaped_task/$marked_done_task/" {} \;
+#    done
     return 0
 }
 
 mark_done () {
-    base.mark_done "base" $@
+    base.mark_done "base" "$@"
 }
 
 dom.mark_done () {
-    base.mark_done "dom" $@
+    base.mark_done "dom" "$@"
 }
 
 stor.mark_done () {
-    base.mark_done "stor" $@
+    base.mark_done "stor" "$@"
 }
 
 ship.mark_done () {
-    base.mark_done "ship" $@
+    base.mark_done "ship" "$@"
 }
 
 viz.mark_done () {
-    base.mark_done "viz" $@
+    base.mark_done "viz" "$@"
 }
 
 #---------------------------------------------------------------------------------------------------------
