@@ -24,8 +24,8 @@ alias ssh_wisdom="ssh wisdom"
 alias ssh_fltops="ssh -Y ossh1.fltops.jpl.nasa.gov -p 1001"
 
 # SQL
-alias sql_domtb="mysql -hweb-mysql01.jpl.nasa.gov -u django -p domtb"
-alias sql_dom="mysql -hweb-mysql01.jpl.nasa.gov -u etrapp -p domtb"
+alias sql_domtb="mysql -hweb-mysql01.jpl.nasa.gov -u 'elliottrapp' -p domtb"
+alias sql_dom="mysql -hweb-mysql01.jpl.nasa.gov -u 'etrapp' -p dom"
 
 # Git
 alias git_all_pull_orgin="cd $edl_setup_scripts/; git pull origin master; cd $edl/; git pull origin master; cd $flow; git pull origin master; cd $flow_edl; git pull origin master; cd $ranger; git pull origin master;"
