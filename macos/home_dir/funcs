@@ -19,7 +19,7 @@ base.todo () {
         project=$1
         if [[ $project == "base" ]];
         then
-            notes_path=$notes/
+            notes_path=$notes
         else
             notes_path=$work/$project/notes/
         fi
@@ -40,9 +40,18 @@ base.todo () {
                 year=`date +'%Y'`
                 month=`date +'%m'`
                 day=`date +'%d'`
-                note_path=$notes_path/$year/$month/$day.md
+                note_dir=$notes_path/$year/$month
+                note_path=$note_dir/$day.md
+                if [ ! -f $note_path ]; then
+                    mkdir -p $note_dir
+                    touch $note_path
+                    printf "$day-$month-$year\n---\n\n" > $note_path
+                    printf "Created new note: $note_path\n"
+                else
+                    printf "Note \"$note_path\" already exists. Saving changes to existing file.\n"
                 echo "#TODO[ ]: $todo" >> $note_path
                 return 0
+    fi
         fi
 }
 
@@ -127,7 +136,7 @@ base.list_done () {
     project=$1
     if [[ $project == "base" ]];
     then
-        notes_path=$notes/
+        notes_path=$notes
     else
         notes_path=$work/$project/notes/
     fi

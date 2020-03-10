@@ -19,7 +19,7 @@ export file_utils="$HOME/FileUtilities"
 export backups="$HOME/Backups"
 export work="$HOME/Work"
 export school="$HOME/School"
-export notes="$HOME/Notes"
+export notes="$HOME/notes"
 
 # Config
 export config="/Users/etrapp/.config"
