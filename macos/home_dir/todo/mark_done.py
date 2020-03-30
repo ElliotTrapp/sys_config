@@ -1,54 +1,11 @@
 from __future__ import print_function, unicode_literals
 
 from PyInquirer import style_from_dict, Token, prompt, Separator
+from todo import get_todos
 from pprint import pprint
-import os, re, datetime
+import os, re, datetime, argparse
 
 horizontalline = '-------------------------------------------------------------------------------------------------'
-
-def re_grep(raw_pattern, directory):
-    pattern = re.compile(raw_pattern)
-    matches = []
-    for path, _, files in os.walk(directory):
-        for fn in files:
-            filepath = os.path.join(path, fn)
-            with open(filepath) as handle:
-                for lineno, line in enumerate(handle):
-                    mo = pattern.search(line)
-                    if mo:
-                        matches.append({'filepath': filepath, 'lineno': lineno, 'task': line.strip()})
-    return matches
-
-def get_todos(path):
-    matches = re_grep('#TODO\[ \]', path)
-    return matches
-
-def print_todos(matches):
-    for match in matches:
-        print('{}:{} {}'.format(match.get('filepath'), match.get('lineno'), match.get('task')))
-
-def base_todo(project='base', todo=None):
-    if project == 'base':
-        notes_path = os.getenv('notes')
-    else:
-        notes_path = os.path.join(os.getenv('work'), project, '/notes/')
-    if todo is None:
-        print(horizontalline)
-        matches = get_todos(notes_path)
-        print_todos(matches)
-    else:
-        now = datetime.datetime.now()
-        note_dir=os.path.join(os.getenv('notes_path', now.year, now.month))
-        note_path=os.path.join(note_dir, '{}.md'.format(now.day))
-        if not os.path.isfile(note_path):
-            os.makedirs(note_dir)
-            open(note_path, 'a').close()
-            print('{}-{}-{}\n---\n\n > {}'.format(now.day, now.month, now.year, note_path))
-            print('Created new note: {}\n'.format(note_path))
-        else:
-            print('Note {} already exists. Saving changes to existing file.\n'.format(note_path))
-        with open(note_path, 'a') as note:
-            note.write(todo)
 
 def mark_done(project='base', done=None):
     style = style_from_dict({
@@ -81,34 +38,27 @@ def mark_done(project='base', done=None):
         ]
 
         answers = prompt(questions, style=style)
-        pprint(answers)
+
+        for answer in answers['tasks']:
+            for match in matches:
+                if answer == match['task']:
+                    updated_task = match['task'].replace('#TODO[ ]:', '#TODO[X]:')
+                    with open(match['filepath'], 'r') as handle:
+                        lines = handle.readlines()
+                    with open(match['filepath'], 'w') as handle:
+                        for line in lines:
+                            if match['task'] in line:
+                                handle.write(updated_task + '\n')
+                            else:
+                                handle.write(line)
+                        print('Updated {}'.format(match['filepath']))
+                    
+
 
 if __name__ == '__main__':
-    base_todo()
+    #parser = argparse.ArgumentParser(description='manage todo lists')
     mark_done()
 
-#
-## BaseTODO
-## ProjectTODOs
-## BaseMarkDone
-## ProjectMarkDone
-## BaseListDone
-## ProjectListDone
-#
-#
-#
-## Helper funcs
-#update_todo() {
-#    string=$1 
-#    done_string="[X]"
-#    echo "${string/\[ \]/$done_string}"
-#}
-#escape_todo() {
-#    string=$1 
-#    escaped_string="\[ \]"
-#    echo "${string/\[ \]/$escaped_string}"
-#}
-#
 ##---------------------------------------------------------------------------------------------------------
 ##                                   TODO
 ##---------------------------------------------------------------------------------------------------------

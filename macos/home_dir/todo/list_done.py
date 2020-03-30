@@ -1,23 +1,38 @@
-todo () {
-    python $config/todo/todo.py "$@"
-}
+from __future__ import print_function, unicode_literals
 
-dom.todo () {
-    python $config/todo/todo.py --project "dom" "$@"
-}
+from PyInquirer import style_from_dict, Token, prompt, Separator
+from todo_lib import re_grep, print_matches
+from pprint import pprint
+import os, re, datetime, argparse
 
-stor.todo () {
-    python $config/todo/todo.py --project "stor" "$@"
-}
+horizontalline = '-------------------------------------------------------------------------------------------------'
 
-ship.todo () {
-    python $config/todo/todo.py --project "ship" "$@"
-}
+def get_done(path):
+    matches = re_grep('#TODO\[X\]', path)
+    return matches
 
-viz.todo () {
-    python $config/todo/todo.py --project "viz" "$@"
-}
-#HORIZONTALLINE="-------------------------------------------------------------------------------------------------"
+def list_done(project='base'):
+    if project == 'base':
+        notes_path = os.getenv('notes')
+    else:
+        notes_path = os.path.join(os.getenv('work'), project, '/notes/')
+    print(horizontalline)
+    matches = get_done(notes_path)
+    print_matches(matches)
+
+if __name__ == '__main__':
+    #parser = argparse.ArgumentParser(description='manage todo lists')
+    list_done()
+
+#
+## BaseTODO
+## ProjectTODOs
+## BaseMarkDone
+## ProjectMarkDone
+## BaseListDone
+## ProjectListDone
+#
+#
 #
 ## Helper funcs
 #update_todo() {
@@ -182,18 +197,18 @@ viz.todo () {
 #viz.list_done () {
 #    base.list_done "viz" $@
 #}
-
-# Easily extract local ip address
-printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
+#
+## Easily extract local ip address
+#printip() { (awk '{print $2}' <(ifconfig en0 | grep 'inet ')); }
+#
+## Use lf to switch directories and bind it to ctrl-o
+#lfcd () {
+#    tmp="$(mktemp)"
+#    lf -last-dir-path="$tmp" "$@"
+#    if [ -f "$tmp" ]; then
+#        dir="$(cat "$tmp")"
+#        rm -f "$tmp"
+#        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+#    fi
+#}
+#bindkey -s '^o' 'lfcd\n'
