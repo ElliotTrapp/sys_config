@@ -1,6 +1,6 @@
-todo () {
-    python $config/todo/todo.py "$@"
-}
+#todo () {
+#    python $config/todo/todo.py "$@"
+#}
 
 dom.todo () {
     python $config/todo/todo.py --project "dom" "$@"
