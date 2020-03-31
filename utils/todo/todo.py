@@ -11,12 +11,12 @@ def get_todos(path):
     matches = re_grep('#TODO\[ \]', path)
     return matches
 
-def todo(project=None, todo=None):
+def todo(project=None, task=None):
     if project is None:
         notes_path = os.getenv('notes')
     else:
         notes_path = str(os.path.join(os.getenv(project), 'notes/'))
-    if todo is None:
+    if not task:
         print(horizontalline)
         matches = get_todos(notes_path)
         print_matches(matches)
@@ -36,12 +36,12 @@ def todo(project=None, todo=None):
         else:
             print('Note {} already exists. Saving changes to existing file.\n'.format(note_path))
         with open(note_path, 'a') as note:
-            note.write('#TODO[ ]: {}'.format(todo))
+            note.write('\n#TODO[ ]: {}'.format(task))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='manage todo lists')
     parser.add_argument('--project', required=False)
-    parser.add_argument('todo', nargs='?', default=None)
+    parser.add_argument('task', nargs=argparse.REMAINDER, default=None)
     args = parser.parse_args()
-    #todo(project=args.project, todo=str(sys.argv[1:]))#todo=args.todo)
-    todo(project=args.project, todo=args.todo)#todo=args.todo)
+    task = ' '.join(args.task)
+    todo(project=args.project, task=task)

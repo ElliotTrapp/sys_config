@@ -61,41 +61,43 @@ else
 fi
 note_path=$note_dir$day.md
 
+create_note
+
 if (( $# > 1 )); then
-    while [[ $# -gt 0 ]]
-    do
-        key="$2"
-        case $key in
-            -e|--edit)
-            printf "(e)dit is not yet implemented :(\n"
-            #shift
-            #shift
-            exit 0
-            ;;
-            -p|--print)
-            cat $note_path
-            shift
-            ;;
-            -c|--create)
-            create_note
-            shift
-            ;;
-            -i|--info)
-            print_info
-            shift
-            ;;
-            -h|--help)
-            print_help
-            shift
-            ;;
-            *)
-            printf "Unknown Argument \"$2\"\n"
-            printf "Try \"note --help\" to see usage information.\n"
-            shift
-            ;;
-        esac
-    done
+    echo "$@" >> note_path
+#    while [[ $# -gt 0 ]]
+#    do
+#        key="$2"
+#        case $key in
+#            -e|--edit)
+#            printf "(e)dit is not yet implemented :(\n"
+#            #shift
+#            #shift
+#            exit 0
+#            ;;
+#            -p|--print)
+#            cat $note_path
+#            shift
+#            ;;
+#            -c|--create)
+#            create_note
+#            shift
+#            ;;
+#            -i|--info)
+#            print_info
+#            shift
+#            ;;
+#            -h|--help)
+#            print_help
+#            shift
+#            ;;
+#            *)
+#            printf "Unknown Argument \"$2\"\n"
+#            printf "Try \"note --help\" to see usage information.\n"
+#            shift
+#            ;;
+#        esac
+#    done
 else
-    create_note
     open_note
 fi

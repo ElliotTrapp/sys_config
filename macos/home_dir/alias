@@ -39,12 +39,7 @@ alias copy_from_boltzmann="scp -r $boltzmann_tutorials_test"
 alias py3_base="source ~/.config/envs/py3_base/bin/activate"
 alias dom_tests_env="source /Users/etrapp/Work/dom/development/tests/dom_tests/dom_tests_env/bin/activate"
 
-# Conda Envs
-#alias py3_env="conda activate py3"
-#alias spice_env="conda activate spice"
-
 # Projects
-
 for project in ${projects[@]}; do
     alias ${project}.note="note $project"
 done
@@ -70,9 +65,17 @@ alias mouse_acc="defaults read .GlobalPreferences com.apple.mouse.scaling"
 alias mouse_acc_on="defaults write .GlobalPreferences com.apple.mouse.scaling 1"
 alias mouse_acc_off="defaults write .GlobalPreferences com.apple.mouse.scaling -1"
 
-
 alias todo="python $config/todo/todo.py"
-#todo () {
-#    python $config/todo/todo.py "$@"
-#}
+alias dom.todo="python $config/todo/todo.py --project 'dom'"
+alias stor.todo="python $config/todo/todo.py --project 'stor'"
+alias viz.todo="python $config/todo/todo.py --project 'viz'"
 
+alias mark_done="python $config/todo/mark_done.py"
+alias dom.mark_done="python $config/todo/mark_done.py --project 'dom'"
+alias stor.mark_done="python $config/todo/mark_done.py --project 'stor'"
+alias viz.mark_done="python $config/todo/mark_done.py --project 'viz'"
+
+alias list_done="python $config/todo/list_done.py"
+alias dom.list_done="python $config/todo/list_done.py --project 'dom'"
+alias stor.list_done="python $config/todo/list_done.py --project 'stor'"
+alias viz.list_done="python $config/todo/list_done.py --project 'viz'"
