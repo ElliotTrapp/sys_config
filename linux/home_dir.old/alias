@@ -1,0 +1,61 @@
+alias vzsh="vim ~/.zshrc"
+alias vvsh="vim ~/.vimrc"
+alias vbsh="vim ~/.bashrc"
+
+alias szsh="source ~/.zshrc"
+alias svsh="source ~/.vimrc"
+alias sbsh="source ~/.bashrc"
+
+# SSH
+alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"
+alias ssh_devvax="ssh devvax"
+alias ssh_devlan="ssh devlan"
+alias ssh_darts="ssh boltzmann"
+alias ssh_domtst="ssh mcs-dom-test1"
+alias ssh_wisdom="ssh wisdom"
+alias ssh_fltops="ssh -Y ossh1.fltops.jpl.nasa.gov -p 1001"
+
+# SCP
+alias copy_from_dom_site="scp -r $webhosting_dom_site"
+alias copy_from_boltzmann="scp -r $boltzmann_tutorials_test"
+
+# Conda Envs
+alias py3_env="conda activate py3"
+alias spice_env="conda activate spice"
+
+# Utilities
+alias save_dir="$utilities/save_dir.sh"
+alias write_new_version="$utilities/write_new_version.sh"
+alias save_remote_dir="/Users/etrapp/Utilities/save_remote_dir.sh"
+
+alias run_dev="cd $edl_setup_scripts/development/; ./run_dev;"
+alias build_dev="cd $edl_setup_scripts/development/; ./build_dev;"
+alias build_run="build_dev; run_dev;"
+
+alias dom.nextgen="etrapp@webhosting-login1.jpl.nasa.gov:/home/domtb/domtb/"
+
+alias vi="vim"
+#alias tmux="$scripts/tmux_setup.sh"
+alias take_note="$scripts/take_note.sh"
+
+alias dom.note="take_note dom"
+alias viz.note="take_note viz"
+alias cave.note="take_note cave"
+alias dmt.note="take_note dmt"
+
+alias dom.todo="vi $dom/dom.todo"
+alias viz.todo="vi $viz/viz.todo"
+alias cave.todo="vi $cave/cave.todo"
+alias dmt.todo="vi $dmt/dmt.todo"
+
+alias py3="python3"
+alias py2="python"
+alias py3_env="conda activate py3"
+alias py2_env="conda activate py2"
+alias nb="conda activate py3; jupyter notebook"
+alias vpn="sudo openvpn nl-07.protonvpn.com.udp.ovpn"
+alias cpy="xclip -selection clipboard"
+alias pst="xclip -selection clipboard -o"
+alias space="df -h"
+
+alias printip="dig +short myip.opendns.com @resolver1.opendns.com"
