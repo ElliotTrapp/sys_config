@@ -27,11 +27,13 @@ plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vi'
- fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='vi'
+# fi
+
+export EDITOR='vim'
 
 ## added by Anaconda3 2018.12 installer
 ## >>> conda init >>>
