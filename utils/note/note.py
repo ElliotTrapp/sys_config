@@ -13,10 +13,10 @@ def create_note(note_path, note_dir):
         os.makedirs(note_dir)
     if not os.path.exists(note_path):
         with open(note_path, 'w+') as handle:
-            handle.write('{}-{}-{}\n---\n\n'.format(day, month, year))
-        print('Created new note: {}\n'.format(note_path))
+            handle.write('{}-{}-{}\n---\n'.format(day, month, year))
+        print('Created new note: {}'.format(note_path))
     else:
-        print('Note {} already exists. Saving changes to existing file\n'.format(note_path))
+        print('Note {} already exists. Saving changes to existing file'.format(note_path))
 
 def open_note(note_path):
     'Open note with vim in insert mode'
@@ -34,7 +34,6 @@ def main(project=None, note=None):
     create_note(note_path=note_path, note_dir=note_dir)
     if note:
         with open(note_path, 'a') as handle:
-            handle.write('\n')
             handle.write(note)
     else:
         open_note(note_path=note_path)
