@@ -16,11 +16,11 @@ alias sall="szsh && salias && sevars && sfuncs"
 
 # SSH
 alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"
-alias ssh_devvax="ssh devvax"
+alias ssh_devvax="ssh -t etrapp@devvax 'sudo su dom'"
 alias ssh_devlan="ssh devlan"
 alias ssh_darts="ssh boltzmann"
-alias ssh_domtst="ssh mcs-dom-test1"
-alias ssh_wisdom="ssh wisdom"
+alias ssh_domtst="ssh -t etrapp@mcs-dom-test1 'sudo su domtst'"
+alias ssh_wisdom="ssh -t etrapp@wisdom 'sudo su domtst'"
 alias ssh_fltops="ssh -Y ossh1.fltops.jpl.nasa.gov -p 1001"
 
 # SQL
