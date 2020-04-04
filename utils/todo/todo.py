@@ -28,7 +28,7 @@ def todo(project=None, task=None):
         note_dir=os.path.join(notes_path, year, month)
         note_path='{}.md'.format(os.path.join(note_dir, day))
         print(horizontalline)
-        if not os.path.isfile(note_path):
+        if not os.path.exists(note_dir):
             os.makedirs(note_dir)
             open(note_path, 'a').close()
             print('{}-{}-{}\n---\n\n > {}'.format(year, month, day, note_path))

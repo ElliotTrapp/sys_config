@@ -17,7 +17,7 @@ alias sall="szsh && salias && sevars && sfuncs"
 # SSH
 alias ssh_dom_site="ssh etrapp@webhosting-login1.jpl.nasa.gov"
 alias ssh_devvax="ssh -t etrapp@devvax"
-alias ssh_real="ssh -t etrapp@devvax 'ssh -t etrapp@realism sudo su dom'"
+alias ssh_real="ssh -t etrapp@devvax 'ssh -t etrapp@realism sudo su - dom'"
 alias ssh_devlan="ssh devlan"
 alias ssh_darts="ssh boltzmann"
 
