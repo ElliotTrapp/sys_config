@@ -26,6 +26,10 @@ alias ssh_mdt="ssh etrapp@mcs-dom-test1"
 alias ssh_tst_mdt="ssh -t etrapp@mcs-dom-test1 'sudo su domtst'"
 alias ssh_dom_mdt="ssh -t etrapp@mcs-dom-test1 'sudo su dom'"
 
+alias ssh_mmd="ssh etrapp@mcs-mds-dev"
+alias ssh_tst_mmd="ssh -t etrapp@mcs-mds-dev 'sudo su domtst'"
+alias ssh_dom_mmd="ssh -t etrapp@mcs-mds-dev 'sudo su dom'"
+
 alias ssh_wis="ssh etrapp@wisdom"
 alias ssh_tst_wis="ssh -t etrapp@wisdom 'sudo su domtst'"
 alias ssh_dom_wis="ssh -t etrapp@wisdom 'sudo su dom'"
