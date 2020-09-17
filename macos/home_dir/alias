@@ -101,3 +101,6 @@ alias list_done="python $config/todo/list_done.py"
 alias dom.list_done="python $config/todo/list_done.py --project 'dom'"
 alias stor.list_done="python $config/todo/list_done.py --project 'stor'"
 alias viz.list_done="python $config/todo/list_done.py --project 'viz'"
+
+alias dom_test_command="echo 'java -cp /home/etrapp/domV10.11B1.jar dom.tools.CatGetFile -s mcs-dom-test1:391 -rmi mcs-dom-test1:2000
+ -rminame MMOPASS -uid etrapp -t GDS_TEST_T'"
