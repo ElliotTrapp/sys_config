@@ -105,6 +105,6 @@ alias viz.list_done="python $config/todo/list_done.py --project 'viz'"
 alias dom_test_command="echo 'java -cp /home/etrapp/domV10.11B1.jar dom.tools.CatGetFile -s mcs-dom-test1:391 -rmi mcs-dom-test1:2000
  -rminame MMOPASS -uid etrapp -t GDS_TEST_T'"
 
-alias stor_port_forward="ssh -X -p 1001 -l etrap -L 8080:localhost:50001 -t ossh.fltops.jpl.nasa.gov ssh -Y -L 50001:localhost:8080 stor-flight-ops-1"
+alias stor_port_forward="ssh -X -p 1001 -l etrapp -L 8080:localhost:50001 -t ossh.fltops.jpl.nasa.gov ssh -Y -L 50001:localhost:8080 stor-flight-ops-1"
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
 
