@@ -102,9 +102,9 @@ alias dom.list_done="python $config/todo/list_done.py --project 'dom'"
 alias stor.list_done="python $config/todo/list_done.py --project 'stor'"
 alias viz.list_done="python $config/todo/list_done.py --project 'viz'"
 
-alias domtstcmd="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom:391 -t GDS_TEST_T"
+alias domtstcmd="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom:391 -t GDS_TEST_T'"
 
-alias domtstcmd_trustrmi="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom.fltops.jpl.nasas.gov:391 -rmi mmdomrmi.fltops.jpl.nasa.gov:2000 -rminame MMO -t GDS_TEST_T"
+alias domtstcmd_trustrmi="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom.fltops.jpl.nasas.gov:391 -rmi mmdomrmi.fltops.jpl.nasa.gov:2000 -rminame MMO -t GDS_TEST_T'"
 
 alias domtstcmd_untrustrmi="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom.fltops.jpl.nasa.gov:391 -rmi mmdomrmi.fltops.jpl.nasa.gov:2000 -rminame MMOPASS -uid etrapp -t GDS_TEST_T -trust /dom/rmiserver/domrmikey'"
 
