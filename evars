@@ -1,0 +1,44 @@
+# Paths
+export PATH=/usr/local/bin:/usr/bin:$HOME/bin:$HOME/anaconda3/bin:/bin/:$PATH
+
+# Terminal
+export TERM="xterm-256color"
+
+# ZSH
+#Path to your oh - my - zsh installation.
+#export ZSH=$HOME/.oh-my-zsh
+# To prevent syntax parser slowing things down
+export ZSH_HIGHLIGHT_MAXLENGTH=60
+
+# PIP
+export PIP_REQUIRE_VIRTUALENV=false
+
+home_dirs=("sys_config" "Work" "School" "Notes" "HomeAutomation" "FileUtils")
+for home_dir in ${home_dirs[@]}; do
+    declare $home_dir="$HOME/home_dir"
+    export $home_dir
+    mkdir -p $HOME/$home_dir
+done
+
+# Config
+configs=("funcs" "evars" "alias" "zshrc" "vimrc" "cronjobs")
+export $configs
+
+for config_file in ${configs[@]}; do
+    declare $config_file="$sys_config/$config_file"
+    export $config_file
+done
+
+# Utils
+export save_file="$file_utils/save_file.sh"
+
+# Projects
+projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
+export $projects
+
+for project in ${projects[@]}; do
+    declare $project="$work/$project"
+    export $project
+#    declare $project_notes="$work/$project/notes/"
+#    export $project_notes
+done
