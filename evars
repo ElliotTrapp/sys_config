@@ -17,7 +17,6 @@ home_dirs=("sys_config" "Work" "School" "Notes" "HomeAutomation" "FileUtils")
 for home_dir in ${home_dirs[@]}; do
     declare $home_dir="$HOME/home_dir"
     export $home_dir
-    mkdir -p $HOME/$home_dir
 done
 
 # Config

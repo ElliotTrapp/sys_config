@@ -1,10 +1,10 @@
-execute pathogen#infect()
+"" execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
 " pathogen set up stuff to allow installing vim packages
-call pathogen#infect()
-call pathogen#helptags()
+"" call pathogen#infect()
+"" call pathogen#helptags()
 "
 "" syntastic plugin settings for linting in vim
 set statusline+=%#warningmsg#
@@ -111,9 +111,9 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:onedark_termcolors=256
+"" let g:onedark_termcolors=256
 
-colorscheme onedark
+"" colorscheme onedark
 
 "Some links for further reading:
 "https://clang.llvm.org/docs/ClangFormatStyleOptions.html
