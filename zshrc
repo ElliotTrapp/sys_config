@@ -35,8 +35,19 @@ HISTFILE=~/history
 
 export EDITOR='vim'
 
-
 py3_base
+
+# Build custom prompt
+# Prompt docs: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
+# Color legend: https://jonasjacek.github.io/colors/
+export DARK_OLIVE_GREEN=191
+export WHEAT=229
+export RETURN_CODE="%(?.%F{green}√.%F{red}?%?)%f"
+export CURR_DIR="%B%F{$WHEAT}%3~%f%b"
+export UNAME_HOSTNAME="%F{DARK_OLIVE_GREEN}%n@%m%f"
+export PRIVS="%(!.#.>)"
+#export PROMPT="$RETURN_CODE $CURR_DIR $UNAME_HOSTNAME $PRIVS"
+export PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{229}%3~%f%b %F{191}%n@%m%f %(!.#.>) '
 
 autoload bashcompinit
 bashcompinit
