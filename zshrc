@@ -1,9 +1,11 @@
 # Elliot's zsh config file
 
 # Load alias, funcs, and envvariables
-[ -f "$sys_config/evars" ] && source "$sys_config/evars"
-[ -f "$sys_config/alias" ] && source "$sys_config/alias"
-[ -f "$sys_config/funcs" ] && source "$sys_config/funcs"
+[ -h "$HOME/.evars" ] && source "$HOME/.evars"
+[ -h "$HOME/.alias" ] && source "$HOME/.alias"
+[ -h "$HOME/.funcs" ] && source "$HOME/.funcs"
+plugins=(git vi-mode)
+[ -h "$ohzsh" ] && source "$ohzsh"
 
 # Set zsh theme
 ZSH_THEME="robbyrussell"
@@ -23,56 +25,19 @@ HISTFILE=~/history
 #setopt inc_append_history     # add commands to HISTFILE in order of execution
 #setopt share_history          # share command history data
 
-plugins=(git vi-mode)
-source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='vi'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vi'
+ fi
 
 export EDITOR='vim'
-
-## added by Anaconda3 2018.12 installer
-## >>> conda init >>>
-## !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/trapp/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    \eval "$__conda_setup"
-#else
-#    if [ -f "/home/trapp/anaconda3/etc/profile.d/conda.sh" ]; then
-## . "/home/trapp/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-#        CONDA_CHANGEPS1=false conda activate base
-#    else
-#        \export PATH="/home/trapp/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-## <<< conda init <<<
-#
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/etrapp/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/etrapp/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/etrapp/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/etrapp/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-## <<< conda initialize <<<
-#
-## Set conda environement
-#py3_env
 
 
 py3_base
 
 autoload bashcompinit
 bashcompinit
-eval "$(register-python-argcomplete airflow)"
+#eval "$(register-python-argcomplete airflow)"
