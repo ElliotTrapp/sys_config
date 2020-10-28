@@ -37,8 +37,6 @@ projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
 export $projects
 
 for project in ${projects[@]}; do
-    declare $project="$work/$project"
+    declare $project="$Work/$project"
     export $project
-#    declare $project_notes="$work/$project/notes/"
-#    export $project_notes
 done

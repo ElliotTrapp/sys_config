@@ -47,7 +47,7 @@ export CURR_DIR="%B%F{$WHEAT}%3~%f%b"
 export UNAME_HOSTNAME="%F{DARK_OLIVE_GREEN}%n@%m%f"
 export PRIVS="%(!.#.>)"
 #export PROMPT="$RETURN_CODE $CURR_DIR $UNAME_HOSTNAME $PRIVS"
-export PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{229}%3~%f%b %F{191}%n@%m%f %(!.#.>) '
+export PROMPT='%(?.%F{green}√.%F{red}?%?)%f|%F{191}%n@%m%f|%B%F{229}%3~%f%b|%(!.#.>) '
 
 autoload bashcompinit
 bashcompinit
