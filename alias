@@ -85,27 +85,33 @@ alias note="python $sys_config/note/note.py"
 alias dom.note="python $sys_config/note/note.py --project 'dom'"
 alias stor.note="python $sys_config/note/note.py --project 'stor'"
 alias viz.note="python $sys_config/note/note.py --project 'viz'"
+alias ocs.note="python $sys_config/note/note.py --project 'ocs'"
 
 alias todo="python $sys_config/todo/todo.py"
 alias dom.todo="python $sys_config/todo/todo.py --project 'dom'"
 alias stor.todo="python $sys_config/todo/todo.py --project 'stor'"
 alias viz.todo="python $sys_config/todo/todo.py --project 'viz'"
+alias ocs.todo="python $sys_config/todo/todo.py --project 'ocs'"
 
 alias mark_done="python $sys_config/todo/mark_done.py"
 alias dom.mark_done="python $sys_config/todo/mark_done.py --project 'dom'"
 alias stor.mark_done="python $sys_config/todo/mark_done.py --project 'stor'"
 alias viz.mark_done="python $sys_config/todo/mark_done.py --project 'viz'"
+alias ocs.mark_done="python $sys_config/todo/mark_done.py --project 'ocs'"
 
 alias list_done="python $sys_config/todo/list_done.py"
 alias dom.list_done="python $sys_config/todo/list_done.py --project 'dom'"
 alias stor.list_done="python $sys_config/todo/list_done.py --project 'stor'"
 alias viz.list_done="python $sys_config/todo/list_done.py --project 'viz'"
+alias ocs.list_done="python $sys_config/todo/list_done.py --project 'ocs'"
 
 alias domtstcmd="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom:391 -t GDS_TEST_T'"
 
 alias domtstcmd_trustrmi="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom.fltops.jpl.nasas.gov:391 -rmi mmdomrmi.fltops.jpl.nasa.gov:2000 -rminame MMO -t GDS_TEST_T'"
 
 alias domtstcmd_untrustrmi="echo 'java -cp /dom/classes/domV10.11B1.jar dom.tools.CatGetFile -s mmdom.fltops.jpl.nasa.gov:391 -rmi mmdomrmi.fltops.jpl.nasa.gov:2000 -rminame MMOPASS -uid etrapp -t GDS_TEST_T -trust /dom/rmiserver/domrmikey'"
+
+ alias gostorvnc='ssh -t -o ServerAliveInterval=900  -p 1001 -L 5901:localhost:22222 ossh.fltops.jpl.nasa.gov "ssh  -o ServerAliveInterval=900  -L 22222:localhost:5902 storops1" ' 
 
 alias stor_port_forward="ssh -X -p 1001 -l etrapp -L 8080:localhost:50001 -t ossh.fltops.jpl.nasa.gov ssh -Y -L 50001:localhost:8080 stor-flight-ops-1"
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'

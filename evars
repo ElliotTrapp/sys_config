@@ -33,7 +33,7 @@ done
 export save_file="$file_utils/save_file.sh"
 
 # Projects
-projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss")
+projects=("stor" "ship" "dom" "viz" "darts" "cave" "sss" "ocs")
 export $projects
 
 for project in ${projects[@]}; do
